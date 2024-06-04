@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const Directionality(
           textDirection: TextDirection.rtl,
-          child: HomePage()),
+          child: SplashScreen()),
     );
   }
 }
@@ -145,65 +145,65 @@ class _HomePageState extends State<HomePage> {
 }
 
 
-//
-// class SplashScreen extends StatefulWidget {
-//   const SplashScreen({Key? key}) : super(key: key);
-//
-//   @override
-//   _SplashScreenState createState() => _SplashScreenState();
-// }
-//
-// class _SplashScreenState extends State<SplashScreen> {
-//   late Timer _timer;
-//
-//   @override
-//   void initState() {
-//     super.initState();
-//     _timer = Timer(const Duration(seconds: 5), () {
-//       Navigator.of(context).pushReplacementNamed('/home');
-//     });
-//   }
-//
-//   @override
-//   void dispose() {
-//     _timer.cancel(); // لغو تایمر در صورت خروج از ویجت
-//     super.dispose();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.black,
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             SizedBox(
-//               height: 160,
-//               width: 160,
-//               child: Image.asset(
-//                 'assets/img/logo/logo.jpg',
-//                 fit: BoxFit.cover,
-//               ),
-//             ),
-//             const SizedBox(height: 24),
-//             const Text(
-//               'بلک مووی',
-//               style: TextStyle(
-//                 color: Colors.orange,
-//                 fontSize: 24,
-//                 fontWeight: FontWeight.bold,
-//               ),
-//             ),
-//             const SizedBox(height: 8),
-//              CircularProgressIndicator(
-//               color: Colors.orange.shade400,
-//               backgroundColor: Colors.yellowAccent.shade700,
-//               // valueColor:  AlwaysStoppedAnimation<Color>(Colors.yellowAccent.shade200),
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
+
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer(const Duration(seconds: 5), () {
+      Navigator.of(context).pushReplacementNamed('/home');
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel(); // لغو تایمر در صورت خروج از ویجت
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(
+              height: 160,
+              width: 160,
+              child: Image.asset(
+                'assets/img/logo/logo.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              'بلک مووی',
+              style: TextStyle(
+                color: Colors.orange,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8),
+             CircularProgressIndicator(
+              color: Colors.orange.shade400,
+              backgroundColor: Colors.yellowAccent.shade700,
+              // valueColor:  AlwaysStoppedAnimation<Color>(Colors.yellowAccent.shade200),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
